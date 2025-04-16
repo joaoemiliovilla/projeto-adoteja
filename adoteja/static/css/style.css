@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lilita+One&display=swap');
+
+body {
+    margin: 0;
+}
+
+.home-section {
+    border: 3px solid purple;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.home-container {
+    border: 2px solid red;
+    width: 100%;
+    max-width: 2000px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.headline {
+    border: 2px solid green;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 44px;
+
+    & h1 {
+        font-size: 128px;
+        font-weight: 600;
+        color: #0088FF;
+        width: fit-content;
+    }
+
+    & h3 {
+        font-size: 32px;
+        color: #000000a9;
+        font-weight: 500;
+        width: fit-content;
+    }
+
+    & button {
+        text-decoration: none;
+        padding: 24px 48px;
+        font-size: 26px;
+        background-color: #0088FF;
+        border: none;
+        border-radius: 100px;
+        width: fit-content;
+
+        & a {
+            text-decoration: none;
+            font-weight: 500;
+            color: white;
+        }
+    }
+}
+
+.image-container {
+    border: 2px solid blue;
+    display: flex;
+    width: 100%;
+
+    & img {
+        width: 670px;
+    }
+}
