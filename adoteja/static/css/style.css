@@ -6,46 +6,56 @@ body {
 }
 
 .home-section {
-    border: 3px solid purple;
+    height: 100vh;
     display: flex;
     width: 100%;
     justify-content: center;
 }
 
 .home-container {
-    border: 2px solid red;
-    width: 100%;
+    width: 80%;
     max-width: 2000px;
     display: flex;
-    gap: 20px;
+    /* gap: 20px; */
+    padding: 32px 78px;
     justify-content: center;
 }
 
 .headline {
-    border: 2px solid green;
     display: flex;
     flex-direction: column;
     width: 100%;
-    gap: 44px;
+    max-width: fit-content;
+    height: fit-content;
+    gap: 36px;
+    margin-top: 80px;
 
     & h1 {
-        font-size: 128px;
-        font-weight: 600;
+        max-width: 90%;
+        font-size: 95px;
+        font-weight: 500;
         color: #0088FF;
         width: fit-content;
+        font-family: "Lilita One", sans-serif;
+        margin: 0;
+        line-height: 5.3rem;
     }
 
     & h3 {
-        font-size: 32px;
+        max-width: 70%;
+        font-size: 28px;
         color: #000000a9;
-        font-weight: 500;
+        font-weight: 400;
         width: fit-content;
+        margin: 0;
+        line-height: 2.7rem;
+        letter-spacing: -0.03rem;
     }
 
     & button {
         text-decoration: none;
-        padding: 24px 48px;
-        font-size: 26px;
+        padding: 12px 32px;
+        font-size: 20px;
         background-color: #0088FF;
         border: none;
         border-radius: 100px;
@@ -60,11 +70,17 @@ body {
 }
 
 .image-container {
-    border: 2px solid blue;
     display: flex;
     width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    align-items: center;
+    height: fit-content;
+    /* justify-content: center; */
+}
 
-    & img {
-        width: 670px;
-    }
+.image-container img {
+    width: 650px;
+    max-width: 100%;
+    height: auto;
 }

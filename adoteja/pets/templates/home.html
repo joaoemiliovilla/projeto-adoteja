@@ -1,15 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AdoteJa - Adoção de Cachorros</title>
-    <style>
-        body { font-family: Arial, sans-serif; text-align: center; background-color: #f4f4f4; }
-        .home-container { max-width: 800px; margin: 20px auto; padding: 20px; background: white; border-radius: 10px; }
-        .cachorro { margin: 10px; padding: 10px; border: 1px solid #ddd; background: #fff; display: inline-block; }
-        img { max-width: 200px; border-radius: 10px; }
-    </style>
+    <link rel="stylesheet" href="{% static 'pets/css/home.css' %}">
 </head>
 <body>
     {% include 'partials/navbar.html' %}
@@ -23,18 +19,31 @@
         </div>
     {% endif %}
     <div class="home-container">
-        <h1>Bem-Vindo ao Adote-Já!</h1>
-        <h3>Veja os cachorros disponíveis para adoção:</h3>
+        <div class="texts">
+            <h1>Nosso Pets</h1>
+            <h3>Confira os doguinhos que estão esperando por você</h3>
+        </div>
         {% for cachorro in cachorros %}
+
+
+
             <div class="cachorro">
                 <img src="{{ cachorro.imagem.url }}" alt="{{ cachorro.nome }}">
                 <h2>{{ cachorro.nome }}</h2>
-                <p>Raça: {{ cachorro.raca }}</p>
-                <p>Idade: {{ cachorro.idade }}</p>
-                <p>Sexo: {{ cachorro.sexo }}</p>
-                <p>{{ cachorro.descricao }}</p>
-                <p><strong>Status:</strong>{{ cachorro.status }}</p>
+                <div class="tags">
+                    <div class="tag">{{ cachorro.status }}</div>
+                    <div class="tag" id="sexo">{{ cachorro.sexo }}</div>
+                </div>
+                <p class="raca">Raça: {{ cachorro.raca }}</p>
+                <!-- <p class="idade">Idade: {{ cachorro.idade }}</p> -->
+                <!-- <p class="sexo">Sexo: {{ cachorro.sexo }}</p> -->
+                <!-- <p>{{ cachorro.descricao }}</p> -->
+                <!-- <p class="status"><strong>Status:</strong>{{ cachorro.status }}</p> -->
             </div>
+
+
+
+
         {% empty %}
             <p>Nenhum cachorro disponível para adoção no momento.</p>
         {% endfor %}

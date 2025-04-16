@@ -15,7 +15,7 @@ def adicionar_cachorro(request):
         form = CachorroForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('home')
+            return redirect('home_pets')
     else:
         form = CachorroForm()
     return render(request, 'adicionar_cachorro.html', {'form': form})
