@@ -30,43 +30,46 @@
         <h1>Nosso Pets</h1>
         <h3>Confira os doguinhos que estão esperando por você</h3>
       </div>
-      {% for cachorro in cachorros %}
 
-      <a href=""></a>
-      <div class="cachorro">
-        <img src="{{ cachorro.imagem.url }}" alt="{{ cachorro.nome }}" />
-        <div class="cachorro-infos">
-          <h2>{{ cachorro.nome }}</h2>
-          <div class="tags">
-            <div class="tag">
-              <i
-                class="ph ph-check-circle"
-                style="color: rgb(255, 255, 255)"
-              ></i
-              >{{ cachorro.status }}
+      <div class="cachorros-container">
+        {% for cachorro in cachorros %}
+        <a href="{% url 'detalhes_cachorro' cachorro.id %}">
+          <div class="cachorro">
+            <img src="{{ cachorro.imagem.url }}" alt="{{ cachorro.nome }}" />
+            <div class="cachorro-infos">
+              <h2>{{ cachorro.nome }}</h2>
+              <div class="tags">
+                <div class="tag">
+                  <i
+                    class="ph ph-check-circle"
+                    style="color: rgb(255, 255, 255)"
+                  ></i
+                  >{{ cachorro.status }}
+                </div>
+                <div class="tag" id="sexo">
+                  <i
+                    class="ph ph-gender-intersex"
+                    style="color: rgb(255, 255, 255)"
+                  ></i
+                  >{{ cachorro.sexo }}
+                </div>
+              </div>
             </div>
-            <div class="tag" id="sexo">
-              <i
-                class="ph ph-gender-intersex"
-                style="color: rgb(255, 255, 255)"
-              ></i
-              >{{ cachorro.sexo }}
+            <div class="end-infos">
+              <h4>Raça</h4>
+              <p>{{ cachorro.raca }}</p>
             </div>
+            <!-- <p class="idade">Idade: {{ cachorro.idade }}</p> -->
+            <!-- <p class="sexo">Sexo: {{ cachorro.sexo }}</p> -->
+            <!-- <p>{{ cachorro.descricao }}</p> -->
+            <!-- <p class="status"><strong>Status:</strong>{{ cachorro.status }}</p> -->
           </div>
-        </div>
-        <div class="end-infos">
-          <h4>Raça</h4>
-          <p>{{ cachorro.raca }}</p>
-        </div>
-        <!-- <p class="idade">Idade: {{ cachorro.idade }}</p> -->
-        <!-- <p class="sexo">Sexo: {{ cachorro.sexo }}</p> -->
-        <!-- <p>{{ cachorro.descricao }}</p> -->
-        <!-- <p class="status"><strong>Status:</strong>{{ cachorro.status }}</p> -->
-      </div>
+        </a>
 
-      {% empty %}
-      <p>Nenhum cachorro disponível para adoção no momento.</p>
-      {% endfor %}
+        {% empty %}
+        <p>Nenhum cachorro disponível para adoção no momento.</p>
+        {% endfor %}
+      </div>
     </div>
   </body>
 </html>

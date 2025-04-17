@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdoteJa</title>
+    <link rel="stylesheet" href="{% static 'pets/css/pet_info.css' %}" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
+    />
+</head>
+<body>
+    <div class="info-container">
+      <div class="info-box">
+        <div class="pet-img">
+          <img src="{{ cachorro.imagem.url }}" alt="">
+        </div>
+        <div class="pet-info-container">
+          <div class="pet_nome">
+            <h1>{{ cachorro.nome }}</h1>
+            <div class="tags">
+              <div class="tag">
+                <i
+                  class="ph ph-check-circle"
+                  style="color: rgb(255, 255, 255)"
+                ></i
+                >{{ cachorro.status }}
+              </div>
+              <div class="tag" id="sexo">
+                <i
+                  class="ph ph-gender-intersex"
+                  style="color: rgb(255, 255, 255)"
+                ></i
+                >{{ cachorro.sexo }}
+              </div>
+            </div>
+          </div>
+          <div class="pet-info">
+            <h4>Raça</h4><p>{{ cachorro.raca }}</p>
+            <p class="idade">Idade: {{ cachorro.idade }}</p>
+          </div>
+        </div>
+      </div>  
+    </div>
+</body>
+</html>

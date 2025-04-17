@@ -122,7 +122,7 @@ body {
     margin: 0;
 }
 
-img {
+.pet-img img {
     width: 270px;
     height: 270px;
     border-radius: 10px;
@@ -143,4 +143,17 @@ img {
 .cachorros-container a {
     text-decoration: none;
     color: inherit;
+}
+
+/* ========================================================= */
+
+.info-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 1000px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20vh;
 }

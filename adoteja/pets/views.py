@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 
 # Create your views here.
 
@@ -19,3 +19,7 @@ def adicionar_cachorro(request):
     else:
         form = CachorroForm()
     return render(request, 'adicionar_cachorro.html', {'form': form})
+
+def detalhes_cachorro(request, id):
+    cachorro = get_object_or_404(Cachorro, id=id)
+    return render(request, 'pet_info.html', {'cachorro':cachorro})
