@@ -1,11 +1,11 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AdoteJa - Adoção de Cachorros</title>
-    <link rel="stylesheet" href="{% static 'pets/css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'pets/css/home.css' %}" />
     <link
       rel="stylesheet"
       type="text/css"
@@ -16,49 +16,57 @@
       type="text/css"
       href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
     />
-</head>
-<body>
-    {% include 'partials/navbar.html' %}
-    {% if messages %}
-        <div class="container mt-3">
-            {% for message in messages %}
-                <div class="alert alert-{{ message.tags }}">
-                    {{ message }}
-                </div>
-            {% endfor %}
-        </div>
+  </head>
+  <body>
+    {% include 'partials/navbar.html' %} {% if messages %}
+    <div class="container mt-3">
+      {% for message in messages %}
+      <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+      {% endfor %}
+    </div>
     {% endif %}
     <div class="home-container">
-        <div class="texts">
-            <h1>Nosso Pets</h1>
-            <h3>Confira os doguinhos que estão esperando por você</h3>
-        </div>
-        {% for cachorro in cachorros %}
+      <div class="texts">
+        <h1>Nosso Pets</h1>
+        <h3>Confira os doguinhos que estão esperando por você</h3>
+      </div>
+      {% for cachorro in cachorros %}
 
-
-            <a href=""></a>
-            <div class="cachorro">
-                <img src="{{ cachorro.imagem.url }}" alt="{{ cachorro.nome }}">
-                <div class="cachorro-infos">
-                    <h2>{{ cachorro.nome }}</h2>
-                    <div class="tags">
-                        <div class="tag"><i class="ph ph-check-circle" style="color: rgb(255, 255, 255)"></i>{{ cachorro.status }}</div>
-                        <div class="tag" id="sexo"><i class="ph ph-gender-intersex" style="color: rgb(255, 255, 255)"></i>{{ cachorro.sexo }}</div>
-                    </div>
-                </div>
-                <p class="raca">Raça<br><p>{{ cachorro.raca }}</p></p>
-                <!-- <p class="idade">Idade: {{ cachorro.idade }}</p> -->
-                <!-- <p class="sexo">Sexo: {{ cachorro.sexo }}</p> -->
-                <!-- <p>{{ cachorro.descricao }}</p> -->
-                <!-- <p class="status"><strong>Status:</strong>{{ cachorro.status }}</p> -->
+      <a href=""></a>
+      <div class="cachorro">
+        <img src="{{ cachorro.imagem.url }}" alt="{{ cachorro.nome }}" />
+        <div class="cachorro-infos">
+          <h2>{{ cachorro.nome }}</h2>
+          <div class="tags">
+            <div class="tag">
+              <i
+                class="ph ph-check-circle"
+                style="color: rgb(255, 255, 255)"
+              ></i
+              >{{ cachorro.status }}
             </div>
+            <div class="tag" id="sexo">
+              <i
+                class="ph ph-gender-intersex"
+                style="color: rgb(255, 255, 255)"
+              ></i
+              >{{ cachorro.sexo }}
+            </div>
+          </div>
+        </div>
+        <div class="end-infos">
+          <h4>Raça</h4>
+          <p>{{ cachorro.raca }}</p>
+        </div>
+        <!-- <p class="idade">Idade: {{ cachorro.idade }}</p> -->
+        <!-- <p class="sexo">Sexo: {{ cachorro.sexo }}</p> -->
+        <!-- <p>{{ cachorro.descricao }}</p> -->
+        <!-- <p class="status"><strong>Status:</strong>{{ cachorro.status }}</p> -->
+      </div>
 
-
-
-
-        {% empty %}
-            <p>Nenhum cachorro disponível para adoção no momento.</p>
-        {% endfor %}
+      {% empty %}
+      <p>Nenhum cachorro disponível para adoção no momento.</p>
+      {% endfor %}
     </div>
-</body>
+  </body>
 </html>
