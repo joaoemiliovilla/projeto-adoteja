@@ -60,9 +60,15 @@ body {
     gap: 12px;
 }
 
+.cachorro-infos {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
 .cachorro h2 {
     font-family: "Lilita One", sans-serif;
-    color: #0088ff;
+    color: #000000;
     font-size: 32px;
     margin: 0;
 }
@@ -74,17 +80,31 @@ body {
     gap: 10px;
 }
 
+.tags .ph {
+    font-size: 16px;
+} 
+
 .tag {
+    display: flex;
+    flex-direction: row;
+    gap: 3px;
     border: 1px solid #ffffff24;
-    padding: 4px 18px;
+    padding: 4px 14px;
     background: linear-gradient(90deg, #FF9500, #FF6A00);
     font-size: 12px;
     color: white;
+    font-weight: 500;
     border-radius: 100px;
+    justify-content: center;
+    align-items: center;
 }
 
 #sexo {
     background: linear-gradient(90deg, #0048ff, #0099ff);
+}
+
+#raca {
+    font-weight: 700;
 }
 
 img {
