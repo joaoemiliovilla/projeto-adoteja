@@ -27,7 +27,7 @@
     {% endif %}
     <div class="home-container">
       <div class="texts">
-        <h1>Nosso Pets</h1>
+        <h1>Nossos Pets</h1>
         <h3>Confira os doguinhos que estão esperando por você</h3>
       </div>
 
@@ -46,13 +46,23 @@
                   ></i
                   >{{ cachorro.status }}
                 </div>
-                <div class="tag" id="sexo">
-                  <i
-                    class="ph ph-gender-intersex"
-                    style="color: rgb(255, 255, 255)"
-                  ></i
-                  >{{ cachorro.sexo }}
-                </div>
+                {% if cachorro.sexo == 'Fêmea' %}
+                  <div class="tag" id="sexo_femea">
+                    <i
+                      class="ph ph-gender-intersex"
+                      style="color: rgb(255, 255, 255)"
+                    ></i
+                    >{{ cachorro.sexo }}
+                  </div>
+                {% else %}
+                  <div class="tag" id="sexo_macho">
+                    <i
+                      class="ph ph-gender-intersex"
+                      style="color: rgb(255, 255, 255)"
+                    ></i
+                    >{{ cachorro.sexo }}
+                  </div>
+                {% endif %}
               </div>
             </div>
             <div class="end-infos">

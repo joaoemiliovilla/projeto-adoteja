@@ -8,7 +8,7 @@ body {
 
 .home-container {
     width: 100%;
-    max-width: fit-content;
+    /* max-width: fit-content; */
     margin: 20px auto;
     padding: 20px;
     background: white;
@@ -100,8 +100,12 @@ body {
     align-items: center;
 }
 
-#sexo {
-    background: linear-gradient(90deg, #0048ff, #0099ff);
+#sexo_femea {
+    background: linear-gradient(90deg, #9d00ff, #ff00cc);
+}
+
+#sexo_macho {
+    background: linear-gradient(90deg, #068006, #01b407);
 }
 
 .end-infos {
@@ -129,15 +133,25 @@ img {
     object-fit: cover;
 }
 
-.cachorros-container {
+/* .cachorros-container {
     display: grid;
-    /* grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); */
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    /* grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    justify-content: center;
     padding: 20px;
     width: 100%;
     margin: 0 auto;
+} */
+
+.cachorros-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    justify-content: center;
 }
 
 .cachorros-container a {

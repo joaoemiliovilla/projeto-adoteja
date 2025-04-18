@@ -4,6 +4,7 @@
 body {
     text-align: center;
     background-color: #f4f4f4;
+    font-family: 'Inter', sans-serif;
 }
 
 .home-container {
@@ -79,6 +80,7 @@ body {
     width: 100%;
     max-width: fit-content;
     gap: 10px;
+    flex-wrap: wrap;
 }
 
 .tags .ph {
@@ -100,8 +102,12 @@ body {
     align-items: center;
 }
 
-#sexo {
-    background: linear-gradient(90deg, #0048ff, #0099ff);
+#sexo_femea {
+    background: linear-gradient(90deg, #9d00ff, #ff00cc);
+}
+
+#sexo_macho {
+    background: linear-gradient(90deg, #068006, #01b407);
 }
 
 .end-infos {
@@ -123,16 +129,16 @@ body {
 }
 
 .pet-img img {
-    width: 270px;
-    height: 270px;
+    width: 470px;
+    height: 470px;
     border-radius: 10px;
     object-fit: cover;
 }
 
 .cachorros-container {
     display: grid;
-    /* grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); */
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    /* grid-template-columns: repeat(3, 1fr); */
     gap: 20px;
     justify-content: center;
     padding: 20px;
@@ -149,11 +155,96 @@ body {
 
 .info-container {
     display: flex;
-    flex-direction: row;
-    width: 100%;
-    max-width: 1000px;
+    /* width: 100%; */
+    padding: 14px;
+    /* max-width: 1000px; */
     justify-content: center;
     align-items: center;
     gap: 10px;
-    margin-top: 20vh;
+    margin-top: 12vh;
+}
+
+.info-box {
+    /* width: 100%; */
+    display: flex;
+    flex-direction: row;
+    gap: 44px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.pet-info-container {
+    /* width: 100%; */
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.pet-nome {
+    display:flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 10px;
+}
+
+.pet-nome h1 {
+    margin: 0;
+    width: fit-content;
+}
+
+.pet-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    & p {
+        margin: 0;
+        width: fit-content;
+        margin-bottom: 10px;
+        color: #000000a9;
+        text-align: start;
+    }
+
+    & h4 {
+        margin: 0;
+        width: fit-content;
+        font-size: 18px;
+    }
+}
+
+.button-adotar {
+    text-decoration: none;
+    color: inherit;
+    padding: 12px 24px;
+    background: linear-gradient(90deg, #0048ff, #0099ff);
+    border-radius: 100px;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+}
+
+@media screen and (max-width: 800px) {
+    .pet-info-container {
+        width: 100%;
+        max-width: 500px;
+    }
+}
+
+@media screen and (max-width: 570px) {
+    .pet-info-container {
+        width: 100%;
+    }
+
+    .info-box {
+        width: 100%;
+    }
+
+    .pet-img img {
+        width: 100%;
+        height: 370px;
+        border-radius: 10px;
+        object-fit: cover;
+    }
+    
 }

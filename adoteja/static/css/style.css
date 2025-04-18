@@ -13,10 +13,9 @@ body {
 }
 
 .home-container {
-    width: 80%;
+    width: 90%;
     max-width: 2000px;
     display: flex;
-    /* gap: 20px; */
     padding: 32px 78px;
     justify-content: center;
 }

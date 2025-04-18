@@ -18,35 +18,52 @@
     />
 </head>
 <body>
+    {% include 'partials/navbar.html' %}
+    {% if messages %}
+      <div class="container mt-3">
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+        {% endfor %}
+      </div>
+    {% endif %}
     <div class="info-container">
       <div class="info-box">
         <div class="pet-img">
           <img src="{{ cachorro.imagem.url }}" alt="">
         </div>
         <div class="pet-info-container">
-          <div class="pet_nome">
+          <div class="pet-nome">
             <h1>{{ cachorro.nome }}</h1>
             <div class="tags">
               <div class="tag">
-                <i
-                  class="ph ph-check-circle"
-                  style="color: rgb(255, 255, 255)"
-                ></i
-                >{{ cachorro.status }}
+                <i class="ph ph-check-circle" style="color: rgb(255, 255, 255)"></i>
+                {{ cachorro.status }}
               </div>
-              <div class="tag" id="sexo">
-                <i
-                  class="ph ph-gender-intersex"
-                  style="color: rgb(255, 255, 255)"
-                ></i
-                >{{ cachorro.sexo }}
-              </div>
+              {% if cachorro.sexo == 'Fêmea' %}
+                <div class="tag" id="sexo_femea">
+                  <i
+                    class="ph ph-gender-intersex"
+                    style="color: rgb(255, 255, 255)"
+                  ></i
+                  >{{ cachorro.sexo }}
+                </div>
+              {% else %}
+                <div class="tag" id="sexo_macho">
+                  <i
+                    class="ph ph-gender-intersex"
+                    style="color: rgb(255, 255, 255)"
+                  ></i
+                  >{{ cachorro.sexo }}
+                </div>
+              {% endif %}
             </div>
           </div>
           <div class="pet-info">
+            <h4>Idade</h4><p class="idade">{{ cachorro.idade }}</p>
             <h4>Raça</h4><p>{{ cachorro.raca }}</p>
-            <p class="idade">Idade: {{ cachorro.idade }}</p>
+            <h4>Descrição</h4><p class="descricao">{{ cachorro.descricao }}</p>
           </div>
+          <a href="" class="button-adotar">Adotar Agora</a>
         </div>
       </div>  
     </div>
