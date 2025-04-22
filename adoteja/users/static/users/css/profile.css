@@ -133,3 +133,28 @@ p {
 .arrow:hover{
     background-color: #00000005;
 }
+
+.profile-infos {
+  padding: 32px;
+}
+
+.formulario-dados {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+  gap: 6px;
+}
+
+.profile-infos input {
+  padding: 10px 20px;
+  border-radius: 100px;
+  border: 1px solid #0000001a;
+  max-width: fit-content;
+  margin-bottom: 16px;
+}
+
+.profile-infos label {
+  font-size: 22px;
+  font-weight: 600;
+  color: black;
+}

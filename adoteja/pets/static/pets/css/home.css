@@ -59,6 +59,11 @@ body {
     max-width: fit-content;
     flex-direction: column;
     gap: 12px;
+    transition: transform .3s ease;
+}
+
+.cachorro:hover {
+    transform: scale(1.03);
 }
 
 .cachorro-infos {

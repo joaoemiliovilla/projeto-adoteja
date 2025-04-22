@@ -1,11 +1,11 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AdoteJa</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
     <link
       rel="stylesheet"
       type="text/css"
@@ -16,52 +16,52 @@
       type="text/css"
       href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
     />
-</head>
-<body>
-    {% include 'partials/navbar.html' %}
-    {% if messages %}
-        <div class="container mt-3">
-            {% for message in messages %}
-                <div class="alert alert-{{ message.tags }}">
-                    {{ message }}
-                </div>
-            {% endfor %}
-        </div>
+  </head>
+  <body>
+    {% include 'partials/navbar.html' %} {% if messages %}
+    <div class="container mt-3">
+      {% for message in messages %}
+      <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+      {% endfor %}
+    </div>
     {% endif %}
     <div class="home-section">
-        <div class="home-container">
-            <div class="headline">
-                <h1>Encontre seu novo melhor amigo</h1>
-                <h3>O lugar certo para encontrar um companheiro leal para você</h3>
-                <button><a href="{% url 'home_pets' %}">Adotar Agora</a></button>
-            </div>
-            <div class="image-container">
-                <img src="{% static 'img/ilustration.png' %}" alt="Cachorro olhando para tela">
-            </div>
+      <div class="home-container">
+        <div class="headline">
+          <h1>Encontre seu novo melhor amigo</h1>
+          <h3>O lugar certo para encontrar um companheiro leal para você</h3>
+          <a href="{% url 'home_pets' %}" class="btn-adotar">Adotar Agora</a>
         </div>
+        <div class="image-container">
+          <img
+            src="{% static 'img/ilustration.png' %}"
+            alt="Cachorro olhando para tela"
+          />
+        </div>
+      </div>
     </div>
     <div class="site-informations">
-        <div class="info-head">
-            <h1>Sobre nós</h1>
-            <h2>Descubra o porque você deve adotar um novo cachorro</h2>
+      <div class="info-head">
+        <h1>Sobre nós</h1>
+        <h2>Descubra o porque você deve adotar um novo cachorro</h2>
+      </div>
+      <div class="info-cards">
+        <div class="info-card">
+          <i class="ph ph-dog" style="color: #0088ff"></i>
+          <h1>Mude uma Vida</h1>
+          <h3>Ao adotar, você dá amor e um novo lar a quem mais precisa.</h3>
         </div>
-        <div class="info-cards">
-            <div class="info-card">
-                <i class="ph ph-dog" style="color: #0088FF"></i>
-                <h1>Eles realmente amam você</h1>
-                <h3>Estudos comprovam que os cachorros podem amar os humanos mais do que os próprios humanos entre sí.</h3>
-            </div>
-            <div class="info-card">
-                <i class="ph ph-dog" style="color: #0088FF"></i>
-                <h1>Eles realmente amam você</h1>
-                <h3>Estudos comprovam que os cachorros podem amar os humanos mais do que os próprios humanos entre sí.</h3>
-            </div>
-            <div class="info-card">
-                <i class="ph ph-dog" style="color: #0088FF"></i>
-                <h1>Eles realmente amam você</h1>
-                <h3>Estudos comprovam que os cachorros podem amar os humanos mais do que os próprios humanos entre sí.</h3>
-            </div>
+        <div class="info-card">
+          <i class="ph ph-heart" style="color: #0088ff"></i>
+          <h1>Amor que Não se Compra</h1>
+          <h3>Adotar é um ato de carinho e responsabilidade com os animais.</h3>
         </div>
+        <div class="info-card">
+          <i class="ph ph-house" style="color: #0088ff"></i>
+          <h1>Encontre um Amigo Fiel</h1>
+          <h3>Adotar é ganhar um companheiro para todas as horas.</h3>
+        </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>
