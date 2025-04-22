@@ -2,6 +2,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 def login_view(request):
@@ -37,3 +38,10 @@ def register_view(request):
     else:
         form = UserCreationForm()
     return render(request, "users/register.html", {"form": form})
+
+
+# função que redirecionar para a pagina de informações do usuário e passa os dados do usuário junto
+@login_required # anotação para falar que ele precisa estar logado para fazer isso
+def user_profile_view(request):
+    user = request.user # pega o usuário que está logado no momento
+    return render(request, 'users/profile.html', {'user': user})            
