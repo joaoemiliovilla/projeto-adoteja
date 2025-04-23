@@ -63,7 +63,10 @@
             <h4>Raça</h4><p>{{ cachorro.raca }}</p>
             <h4>Descrição</h4><p class="descricao">{{ cachorro.descricao }}</p>
           </div>
-          <a href="" class="button-adotar">Adotar Agora</a>
+          <form method="POST" action="{% url 'adotar_pet' cachorro.id %}">
+            {% csrf_token %}
+            <button type="submit" class="button-adotar">Adotar Agora</button>
+          </form>
         </div>
       </div>  
     </div>

@@ -27,4 +27,5 @@ urlpatterns = [
     path('', views.home_view, name='home'),
     path('pets/', include('pets.urls')), # redireciona para as urls do app PETS
     path('users/', include('users.urls')), # redireciona para as urls do app USERS
+    path('adoptions/', include('adoptions.urls')), # redireciona para as urls do app ADOPTIONS
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) # permite carregar as imagens no modo desenvolvimento

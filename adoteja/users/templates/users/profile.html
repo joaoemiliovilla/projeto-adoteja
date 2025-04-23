@@ -49,10 +49,31 @@
           <div class="line"></div>
           <div class="profile-infos">
             <div class="formulario-dados">
-              <p>fazer os forms aqui</p>
+              <!-- <p>fazer os forms aqui</p> -->
               <!-- CONTINUE FAZENDO AQUI -->
+              <label for="username">Seu nome</label>
+              <input type="text" placeholder="Seu nome" value="{{ user.username }}">
+
+              <label for="password">Sua senha</label>
+              <input type="text" placeholder="Sua senha" value="{{ user.password }}" maxlength="5">
             </div>
           </div>
+
+          <div class="meus-cachorros">
+            <h2>Meus pets adotados</h2>
+            <div class="cards-pets">
+              {% for adocao in adocoes %}
+                <div class="card-pet">
+                  <img src="{{ adocao.pet.imagem.url }}" alt="{{ adocao.pet.nome }}">
+                  <h4>{{ adocao.pet.nome }}</h4>
+                  <p>{{ adocao.pet.raca }}</p>
+                </div>
+              {% empty %}
+                <p>Você ainda não adotou nenhum pet.</p>
+              {% endfor %}
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
